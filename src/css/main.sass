@@ -18,18 +18,39 @@ h2
   font-weight: bold
   color: #ccc
 
+// header
 header
   display: flex
   justify-content: center
   align-items: center
   height: 100vh
+  position: relative
+  overflow: hidden
+  transition: background 1s ease-in-out
   background: url(./images/beach.jpg)
     repeat: no-repeat
     position: center
     attachment: fixed
     size: cover
-  position: relative
-  overflow: hidden
+  &.clear
+    background: url(./images/beach.jpg)
+  &.light-clouds
+    background: url(./images/light.jpg)
+  &.scattered-clouds
+    background: url(./images/cloud.jpg)
+  &.broken-clouds
+    background: url(./images/mean-cloud.jpg)
+  &.rain
+    background: url(./images/rain.jpg)
+  &.showers
+    background: url(./images/rain.jpg)
+  &.thunder
+    background: url(./images/thunder.jpg)
+  &.snow
+    background: url(./images/snow.jpg)
+  &.mist
+    background: url(./images/mist.jpg)
+
 
 main
   min-height: 2000px
@@ -41,7 +62,7 @@ main
 
 form
   input
-    font-size: .9em
+    font-size: .65em
 
   input[type=text]
     padding: 6px 15px

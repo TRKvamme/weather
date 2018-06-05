@@ -16,6 +16,7 @@ class WeatherDisplay extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleReconnect = this.handleReconnect.bind(this);
+    this.setBackground = this.setBackground.bind(this);
   }
 
   componentDidMount() {
@@ -36,8 +37,15 @@ componentWillUnmount() {
 }
 
 handleReconnect() {
-  if ('geolocation' in navigator) {
-    navigator.geolocation.getCurrentPosition(this.fetchWeatherByPosition)
+  if (this.state.geolocation === true || this.state.weather !== null) {
+    this.setState({
+      weather:null,
+      geolocation:false,
+    })
+  }else {
+    if ('geolocation' in navigator) {
+      navigator.geolocation.getCurrentPosition(this.fetchWeatherByPosition)
+    }
   }
 }
 
@@ -61,7 +69,6 @@ fetchWeatherByPosition(position) {
             return res.json();
         })
         .then(result => {
-          console.log(result);
           this.setState({
             weather:result,
             geolocation:true,
@@ -101,14 +108,40 @@ handleSubmit(e) {
     });
 }
 
+setBackground(weather) {
+ switch(weather) {
+   case 'clear sky':
+    return 'clear'
+   case 'few clouds':
+    return 'light-clouds'
+   case 'scattered clouds':
+   return 'scattered-clouds'
+   case 'broken clouds':
+    return 'broken-clouds'
+   case 'shower rain':
+    return 'showers'
+   case 'rain':
+    return 'rain'
+   case 'thunderstorm':
+    return 'thunder'
+   case 'mist':
+    return 'mist'
+   case 'snow':
+    return 'snow'
+  default:
+    return 'clear'
+ }
+}
+
 
   render() {
     const indicator = this.state.geolocation === false ? 'geo-status': 'geo-status active'
+    let background = this.state.weather ?  this.setBackground(this.state.weather.weather[0].description) : '';
     const widget = this.state.weather ?
       <div className="weather-display">
         <h1>{this.state.weather.name}</h1>
         <h2>{Math.floor(this.state.weather.main.temp - 273.15) + String.fromCharCode(176) + 'C ' + this.state.weather.weather[0].main} </h2>
-        <img src={"https://openweathermap.org/img/w/" + this.state.weather.weather[0].icon +".png"} alt={this.state.weather.weather[0].icon.description} />
+        <img src={"https://openweathermap.org/img/w/" + this.state.weather.weather[0].icon +".png"} alt={this.state.weather.weather[0].description} />
       </div>
       :
       <form onSubmit={this.handleSubmit}>
@@ -125,10 +158,12 @@ handleSubmit(e) {
 
 
     return (
+    <header className={background}>
       <div className='weather-widget'>
         <div className={indicator} onClick={this.handleReconnect}></div>
         {widget}
       </div>
+    </header>
     );
   }
 
