@@ -6,13 +6,15 @@ class Layout extends Component {
     return (
       <div className="container">
         <WeatherDisplay />
+
+
         <main>
-          <h1>Weather app</h1>
+          <h1>Sunshine</h1>
           <hr />
           <div className="content">
             <article className="post1">
               <h2>Simple weather app</h2>
-              <p>Display </p>
+              <p></p>
             </article>
             <article className="post2">
               <h2>Title</h2>
@@ -26,6 +28,8 @@ class Layout extends Component {
             </article>
           </div>
         </main>
+
+
       </div>
     );
   }

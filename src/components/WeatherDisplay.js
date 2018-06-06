@@ -122,8 +122,12 @@ setBackground(weather) {
     return 'showers'
    case 'rain':
     return 'rain'
+   case 'light rain':
+    return 'rain'
    case 'thunderstorm':
     return 'thunder'
+   case 'haze':
+    return 'mist'
    case 'mist':
     return 'mist'
    case 'snow':
@@ -135,6 +139,7 @@ setBackground(weather) {
 
 
   render() {
+
     const indicator = this.state.geolocation === false ? 'geo-status': 'geo-status active'
     let background = this.state.weather ?  this.setBackground(this.state.weather.weather[0].description) : '';
     const widget = this.state.weather ?

@@ -8,15 +8,15 @@
 
 
 h1
-  font-size: 3em
+  font-size: 2em
   font-weight: 100
   letter-spacing: 3px
   color: #559955
 
 h2
-  font-size: 1.5em
+  font-size: 1.3em
   font-weight: bold
-  color: #ccc
+  color: #555
 
 // header
 header
@@ -27,6 +27,7 @@ header
   position: relative
   overflow: hidden
   transition: background 1s ease-in-out
+  margin: 10px 10px
   background: url(./images/beach.jpg)
     repeat: no-repeat
     position: center
@@ -91,7 +92,7 @@ form
   justify-content: center
   align-items: center
   flex-flow: column nowrap
-  background: white
+  background-color: rgba(white,0.7)
   border-radius: 20px
   transform: translate(0px,0px)
 
@@ -120,8 +121,18 @@ form
   padding: 5px
   text-align: center
 
-@media screen and (min-width:800px)
+@media screen and (min-width:600px)
+  .weather-widget
+    font-size: 2em
+  form
+    font-size: 1em
+  h1
+    font-size: 3em
+  h2
+    font-size: 1.8em
 
+
+@media screen and (min-width:800px)
   .weather-widget
     font-size: 2em
   form
@@ -137,5 +148,5 @@ form
   grid-gap: 2em
   .post1, .post2, .post3
     border: 1px #ccc solid
-    padding: 10px 20px
+    padding: 20px 30px
     margin-bottom: 10px
