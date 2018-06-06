@@ -24,7 +24,6 @@ header {
   position: relative;
   overflow: hidden;
   transition: background 1s ease-in-out;
-  margin: 10px 10px;
   background: url(./images/beach.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -80,7 +79,7 @@ form input[type=submit] {
 .weather-widget {
   padding: 2em 3.5em;
   position: relative;
-  margin: auto;
+  margin: 10px 10px;
   max-width: 960px;
   height: max-content;
   display: flex;
