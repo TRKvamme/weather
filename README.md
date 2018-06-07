@@ -4,4 +4,6 @@ Created with create-react-app.
 
 written in js and sass.
 
-uses openweathermap to get weather based on location, or if location is not avaliable, search on city.
+uses openweathermap api to get weather based on location, or if location is not avaliable, you can search for your city.
+
+Built to be a progressive web app,

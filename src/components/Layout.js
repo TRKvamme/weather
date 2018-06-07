@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import WeatherDisplay from "./WeatherDisplay";
 import Content from './Content';
+import Footer from './Footer';
 
 export class Layout extends Component {
   render() {
@@ -9,7 +10,7 @@ export class Layout extends Component {
 
         <WeatherDisplay />
         <Content />
-
+        <Footer/>
       </div>
     );
   }

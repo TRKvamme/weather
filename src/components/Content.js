@@ -5,10 +5,10 @@ export class Content extends Component {
     return (
         <main>
           <h1>Sunshine</h1>
-          <hr />
+          <h2>Wherever you are</h2>
           <section className="content">
             <article className="post1">
-              <h2>On you</h2>
+              <h2>Where you are</h2>
               <p>Instant weather where you are!</p>
             </article>
             <article className="post2">

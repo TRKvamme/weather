@@ -18,6 +18,7 @@ class WeatherDisplay extends Component {
     this.handleReconnect = this.handleReconnect.bind(this);
     this.setBackground = this.setBackground.bind(this);
     this.init = this.init.bind(this);
+
   }
 
 componentDidMount() {
@@ -25,9 +26,10 @@ componentDidMount() {
     this.setState({
       yPos:element.getBoundingClientRect().top,
     });
-    window.addEventListener('scroll',() => this.handleScroll(element));    
+    window.addEventListener('scroll',() => this.handleScroll(element));  
     this.init();
 }
+
 
 init() {
   return new Promise((resolve, reject) =>

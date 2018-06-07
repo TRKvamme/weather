@@ -1,0 +1,27 @@
+footer
+  background: #444
+  
+.footer-content
+  display: grid
+  grid-template-columns: 3fr 3fr 6fr
+  max-width: 960px
+  margin: 0 auto
+  padding: 1em 10px
+  color: #888;
+  ul 
+    list-style: none
+  form
+    margin-bottom: 1em
+
+@media screen and (max-width: 960px)
+  .footer-content
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr))
+
+label
+  font-size: 0.8em
+
+.newsletter
+  h3 
+    margin: 1em
+  
+    
