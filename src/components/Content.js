@@ -8,13 +8,13 @@ export class Content extends Component {
           <hr />
           <section className="content">
             <article className="post1">
-              <h2>Sunshine</h2>
+              <h2>On you</h2>
               <p>Instant weather where you are!</p>
             </article>
             <article className="post2">
-              <h2>Yay</h2>
+              <h2>Anywhere</h2>
               <p>
-                sint tamen dolore culpa noster ipsum velit multos nulla nisi
+                Or anywhere else in the world. 
               </p>
             </article>
             <article className="post3">

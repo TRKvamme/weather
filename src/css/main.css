@@ -1,21 +1,4 @@
-@import "https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,900";
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: "Open Sans", sans-serif; }
-
-h1 {
-  font-size: 2em;
-  font-weight: 100;
-  letter-spacing: 3px;
-  color: #559955; }
-
-h2 {
-  font-size: 1.3em;
-  font-weight: bold;
-  color: #555; }
-
+@import "https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500";
 header {
   display: flex;
   justify-content: center;
@@ -77,7 +60,7 @@ form input[type=submit] {
     background-color: #66b866; }
 
 .weather-widget {
-  padding: 2em 3.5em;
+  padding: 3em 2.8em;
   position: relative;
   margin: 10px 10px;
   max-width: 960px;
@@ -98,16 +81,15 @@ form input[type=submit] {
   width: 20px;
   height: 20px;
   right: 20px;
-  top: 20px;
-  border-radius: 50%;
-  border: 1px #e1e1e1 solid;
-  background: #995555; }
-  .geo-status.active {
-    background: #559955; }
-    .geo-status.active:hover {
-      background: #66b866; }
-  .geo-status:hover {
-    background: #b86666; }
+  top: 20px; }
+  .geo-status svg path {
+    fill: #888; }
+  .geo-status.active svg path {
+    fill: #444; }
+  .geo-status.active:hover path {
+    fill: #666666; }
+  .geo-status:hover svg path {
+    fill: #444444; }
 
 .error {
   color: #995555;
@@ -147,3 +129,20 @@ form input[type=submit] {
     padding: 20px 30px;
     margin-bottom: 10px;
     border-radius: 20px; }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif; }
+
+h1 {
+  font-size: 2em;
+  font-weight: 100;
+  letter-spacing: 3px;
+  color: #559955; }
+
+h2 {
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #555; }
